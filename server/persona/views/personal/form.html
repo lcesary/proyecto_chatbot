@@ -1,0 +1,240 @@
+<!-- Bootstrap Select Css -->
+<link href="resources/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+<div id="form" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="submit_imagen" class="new" enctype="multipart/form-data">
+            <form id="role-form" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 id="user_tittle" class="modal-title">Personal</h3>
+                    <h4 id="user_enable" class=""></h4>
+                </div>
+                <div class="modal-body">
+                    <div id="user_form_body" class="box-body">
+
+
+                        <div id="id_div" class="form-group">
+                            <div class="form-line">
+                                <input id="id" type="text" class="form-control" name="pkpersona" disabled="disabled">
+                                <label for="id" class="form-label"></label>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                 <input id="codigo" type="number" class="form-control text" tabindex=2>
+                                 <label class="form-label">Codigo</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="nombre" type="text" class="form-control text" tabindex=3>
+                                <label class="form-label">Nombre</label>
+                            </div>
+                    </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Apellido</label>
+                                <input id="apellido" name="apellido" type="text"  class="form-control date" tabindex=4>
+                            </div>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Telefono</label>
+                                <input id="telefono" name="telefono" type="number" class="form-control" tabindex=5>
+                            </div>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Direccion</label>
+                                <input id="direccion" name="direccion" type="text" class="form-control" tabindex=6>
+                            </div>
+                        </div>
+                         <div class="form-group ">
+                            <div class="form-line">
+                                <select id="sexo" name="type" class="form-control show-tick" data-live-search="true" title="Seleccione un Sexo" tabindex=7>
+                                    <option value="0">Masculino</option>
+                                    <option value="1">Femenino</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <div class="form-line">
+                                <select id="tipo" name="type" class="form-control show-tick" data-live-search="true" title="Seleccione una tipo de personal" tabindex=8>
+                                    <option value="Estudiante">Estudiante</option>
+                                    <option value="Policia">Policia</option>
+                                    <option value="Bombero">Bombero</option>
+                                    <option value="Ambulancia">Ambulancia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Especialidad</label>
+                                <input id="especialidad" name="especialidad" type="text" class="form-control" tabindex=9>
+                            </div>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Cargo</label>
+                                <input id="cargo" name="cargo" type="text" class="form-control" tabindex=10>
+                            </div>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Transporte</label>
+                                <input id="transporte" name="transporte" type="text" class="form-control" tabindex=11>
+                            </div>
+                        </div>
+
+                           <div id="imagen_archivo_group" class="row m-b-10" style="display: none">
+                            <div class="text-center">
+                                <img id='imagen_show_img' src='' width='150px' >
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label class="form-label"> Foto: </label>
+                                <input id="imagen_archivo" name="archivo" type="file" class="file form-control" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                      <button id="imagen_insert" type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+         </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Bootstrap Select Css -->
+<link href="resources/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+<div id="form2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="submit_imagen2" class="new" enctype="multipart/form-data">
+            <form id="role-form2" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 id="user_tittle2" class="modal-title">Editar de persona</h3>
+                    <h4 id="user_enable2" class=""></h4>
+                </div>
+                <div class="modal-body">
+                     <div id="cliente_form_body2" class="box-body">
+                     <div id="id_div2" class="form-group">
+                            <div class="form-line">
+                                <input id="id2" type="text" class="form-control" name="pkpersona" disabled="disabled">
+                                <label for="id2" class="form-label">persona ID</label>
+                            </div>
+                        </div>
+
+                          <div class="form-group form-float">
+                            <div class="form-line">
+                                 <input id="codigo2" type="number" class="form-control text" tabindex=2>
+                                 <label class="form-label">Codigo</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <input id="nombre2" type="text" class="form-control text" tabindex=3>
+                                <label class="form-label">Nombre</label>
+                            </div>
+                    </div>
+
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Apellido</label>
+                                <input id="apellido2" name="apellido" type="text"  class="form-control date" tabindex=4>
+                            </div>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Telefono</label>
+                                <input id="telefono2" name="telefono" type="number" class="form-control" tabindex=5>
+                            </div>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Direccion</label>
+                                <input id="direccion2" name="direccion" type="text" class="form-control" tabindex=6>
+                            </div>
+                        </div>
+                         <div class="form-group ">
+                            <div class="form-line">
+                                <select id="sexo2" name="type" class="form-control show-tick" data-live-search="true" title="Seleccione un Sexo" tabindex=7>
+                                    <option value="0">Masculino</option>
+                                    <option value="1">Femenino</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <div class="form-line">
+                                <select id="tipo2" name="type" class="form-control show-tick" data-live-search="true" title="Seleccione una tipo de personal" tabindex=8>
+                                    <option value="Estudiante">Estudiante</option>
+                                    <option value="Policia">Policia</option>
+                                    <option value="Bombero">Bombero</option>
+                                    <option value="Ambulancia">Ambulancia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Especialidad</label>
+                                <input id="especialidad2" name="especialidad" type="text" class="form-control" tabindex=9>
+                            </div>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Cargo</label>
+                                <input id="cargo2" name="cargo" type="text" class="form-control" tabindex=10>
+                            </div>
+                        </div>
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Transporte</label>
+                                <input id="transporte2" name="transporte" type="text" class="form-control" tabindex=11>
+                            </div>
+                        </div>
+
+                           <div id="imagen_archivo_group" class="row m-b-10" style="display: none">
+                            <div class="text-center">
+                                <img id='imagen_show_img2' src='' width='150px' >
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <label class="form-label"> Foto: </label>
+                                <input id="imagen_archivo2" name="archivo" type="file" class="file form-control" />
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                  {% if 'persona_update' in privileges %}
+                    <button id="imagen_insert2" type="submit" class="btn btn-primary">Editar</button>
+                   {% end %}
+                </div>
+            </form>
+         </form>
+        </div>
+    </div>
+</div>

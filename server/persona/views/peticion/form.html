@@ -1,0 +1,33 @@
+<div id="form" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 id="cliente_tittle" class="modal-title">Solicitud SOS</h3>
+                <h4 id="cliente_enable" class=""></h4>
+            </div>
+
+            <div class="modal-body">
+                        <div class="form">
+                            {% module xsrf_form_html() %}
+                            <label class="form-label">Esta seguro que quiere pedir ayuda</label>
+                        </div>
+
+                  <div class="modal-footer">
+                      {% if 'peticion_update' in privileges %}
+                      <button id="update" type="button" class="btn bg-deep-purple waves-effect">Aceptar<i class="material-icons">save</i></button>
+                    {% end %}
+                    {% if 'peticion_insert' in privileges %}
+                        <button id="insertB" type="button" class="btn bg-indigo waves-effect">Guardar<i class="material-icons">save</i></button>
+                    <button id="insertP" type="button" class="btn bg-indigo waves-effect">Guardar<i class="material-icons">save</i></button>
+                    <button id="insertA" type="button" class="btn bg-indigo waves-effect">Guardar<i class="material-icons">save</i></button>
+                    {% end %}
+                    {% if 'peticion_insert' in privileges %}
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    {% end %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

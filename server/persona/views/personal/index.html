@@ -1,0 +1,376 @@
+{% extends ../../../common/views/layout.html %}
+{% block style %}
+{% set user = usuario %}
+    <style>
+        .accion {
+            cursor: pointer
+        }
+    </style>
+
+    <script src="resources/js/functions.js"></script>
+
+    <script>
+        main_route = '/personal'
+
+        function default_values() {
+            page_nr = 1
+            max_entries = 10
+            like_search = ""
+            order_by = ""
+            ascendant = true
+        }
+
+        default_values()
+    </script>
+{% end %}
+{% block content %}
+
+{% if 'personal_insert' in privileges or 'personal_update' in privileges %}
+{% include form.html %}
+{% end %}
+
+
+<div class="header"><h2>Personal</h2>
+        <ul class="nav nav-tabs tab-nav-right" role="tablist">
+              <li role="presentation" class="active"><a href="#vista_enviada" data-toggle="tab" aria-expanded="false">Personal</a></li>
+            <li role="presentation"><a href="#vista_recibida" data-toggle="tab" aria-expanded="true">Estudiante</a></li>
+             <li role="presentation"><a href="#vista_personal" data-toggle="tab" aria-expanded="true">Personal</a></li>
+        </ul>
+</div>
+
+<div class="body">
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade " id="vista_recibida">
+            <div class="row">
+                <div class="body table-responsive">
+                    <table id="data_table" class="table">
+                        <thead>
+                            <tr>
+                                <th class="order_by_th" data-name="name">Id</th>
+                                <th class="order_by_th" data-name="date">Codigo</th>
+                                <th class="order_by_th" data-name="date">Nombre</th>
+                                <th class="order_by_th" data-name="count_days">Apellido</th>
+                                <th class="order_by_th" data-name="cycle_year">Telefono</th>
+                                <th class="order_by_th accion" data-name="nombre">Sexo</th>
+                                <th class="order_by_th" data-name="cycle_year">Direccion</th>
+                                <th class="order_by_th" data-name="cycle_year">Tipo</th>
+                                <th class="order_by_th" data-name="cycle_year">Foto</th>
+                                <th class="actions_header">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_content2">
+                            {% include 'estudiante_table.html' %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+ <div role="tabpanel" class="tab-pane fade " id="vista_personal">
+            <div class="row">
+                <div class="body table-responsive">
+                    <table id="data_table" class="table">
+                        <thead>
+                            <tr>
+                                <th class="order_by_th" data-name="name">Id</th>
+                                <th class="order_by_th" data-name="date">Codigo</th>
+                                <th class="order_by_th" data-name="date">Nombre</th>
+                                <th class="order_by_th" data-name="count_days">Apellido</th>
+                                <th class="order_by_th" data-name="cycle_year">Telefono</th>
+                                <th class="order_by_th accion" data-name="nombre">Sexo</th>
+                                <th class="order_by_th" data-name="cycle_year">Direccion</th>
+                                <th class="order_by_th" data-name="cycle_year">Tipo</th>
+                                <th class="order_by_th" data-name="cycle_year">Foto</th>
+                                <th class="actions_header">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_content2">
+                            {% include 'personal_table.html' %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade active in" id="vista_enviada">
+            <div class="row">
+                <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
+                {% if 'personal_insert' in privileges %}
+                     <button id="new" type="button" class="btn bg-indigo waves-effect">
+                        <i class="material-icons">add</i>
+                    </button>
+                {% end %}
+                </div>
+                {% if 'personal_query' in privileges %}
+                <div class="col-xs-2 col-sm-4 col-md-5 col-lg-5"></div>
+                <div class="col-xs-7 col-sm-6 col-md-5 col-lg-5 max-entries-col">
+                    <div class="lower-520">
+                        <label>Max.</label>
+                        <div class="btn-group" role="group">
+                            <button id="max-entries-button" type="button" class="btn bg-deep-purple waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                10 <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                                <li><a href="javascript:void(0);" class="page-drop waves-effect waves-block">10 </a></li>
+                                <li><a href="javascript:void(0);" class="page-drop waves-effect waves-block">25 </a></li>
+                                <li><a href="javascript:void(0);" class="page-drop waves-effect waves-block">50 </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="higher-520">
+                        <label>Registros max.</label>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn waves-effect waves-light btn-lg page entries-light-purple">10</button>
+                            <button type="button" class="btn bg-deep-purple waves-effect waves-light btn-lg page">25</button>
+                            <button type="button" class="btn bg-deep-purple waves-effect waves-light btn-lg page">50</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="body table-responsive">
+                    <table id="data_tablee" class="table">
+                        <thead>
+                            <tr>
+                               <th class="order_by_th" data-name="name">Id</th>
+                                <th class="order_by_th" data-name="date">Codigo</th>
+                                <th class="order_by_th" data-name="date">Nombre</th>
+                                <th class="order_by_th" data-name="count_days">Apellido</th>
+                                <th class="order_by_th" data-name="cycle_year">Telefono</th>
+                                <th class="order_by_th accion" data-name="nombre">Sexo</th>
+                                <th class="order_by_th" data-name="cycle_year">Direccion</th>
+                                <th class="order_by_th" data-name="cycle_year">Tipo</th>
+                                <th class="order_by_th" data-name="cycle_year">Foto</th>
+                                <th class="actions_header">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_content">
+                            {% include 'table.html' %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-0 col-sm-2 col-md-1 col-lg-1"></div>
+                <div class="col-xs-12 col-sm-8 col-md-10 col-lg-10">
+                    <div id="pages-container" class="input-group">
+                        <ul id="pages_ul" class="pagination"></ul>
+                    </div>
+                </div>
+                <div class="col-xs-0 col-sm-2 col-md-1 col-lg-1"></div>
+            </div>
+            <div id="empty_table" class="text-center">
+                <h2 class="text-red">Sin datos</h2>
+            </div>
+        </div>
+    </div>
+
+    {% end %}
+
+{% block script %}
+<script>
+
+
+
+{% if 'personal_insert' in privileges %}
+    $('#new').click(function () {
+            $('#id').val('')
+            $('#codigo').val('')
+            $('#nombre').val('')
+            $('#apellido').val('')
+            $('#telefono').val('')
+            $('#direccion').val('')
+            $('#sexo').val('')
+            $('#tipo').val('')
+            $('#especialidad').val('')
+            $('#cargo').val('')
+            $('#transporte').val('')
+            $('#employee').val('')
+            $('#employee').selectpicker('render')
+            $('#imagen_archivo').fileinput('clear');
+
+            verif_inputs()
+            $('#id_div').hide()
+            $('#insert').show()
+            $('#update').hide()
+            $('#imagen_insert').show()
+            $('#employeee').hide()
+            $('#form').modal('show')
+    })
+
+$('#submit_imagen').on('submit', function (e) {
+e.preventDefault();
+            var data = new FormData($(this)[0]);
+            objeto = JSON.stringify({
+                'ip': $('#ip').val(),
+                'codigo': parseInt($('#codigo').val()),
+                'nombre': $('#nombre').val(),
+                'apellido': $('#apellido').val(),
+                'telefono': parseInt($('#telefono').val()),
+                'direccion': $('#direccion').val(),
+                'sexo': $('#sexo').val(),
+                'tipo': $('#tipo').val(),
+                'especialidad': $('#especialidad').val(),
+                'cargo': $('#cargo').val(),
+                'transporte': $('#transporte').val(),
+            });
+            ruta = "{{privileges['personal_insert'].route}}";
+                    data.append('object', objeto)
+                    data.append('_xsrf',getCookie("_xsrf"))
+                    $.ajax({
+                        url: ruta,
+                        type: "post",
+                        data: data,
+                        contentType: false,
+                        processData: false,
+                        cache: false,
+                        async: false
+            }).done(function (response) {
+                response=JSON.parse(response);
+                if (response.success){
+                    showMessage(response.message, "success", "ok");
+                    $('.modal-backdrop').remove();
+                    $('body').removeClass('modal-open');
+                    $('#form').modal('hide')
+                    query(main_route)
+                }else{
+                    showMessage(response.message, "danger", "remove");
+                    $("#submit_imagen").waitMe("hide");
+                }
+                window.location = main_route
+            })
+        });
+    {% end %}
+
+
+
+
+</script>
+
+
+    <script>
+
+        remove_empty_columns()
+         $(document).ready(function () {
+        $(".file").each(function () {
+            $(this).fileinput('refresh',{
+                allowedFileExtensions: ['jpg', 'gif', 'jpeg','png', 'ico', 'webp'],
+                maxFileSize: 20000,
+                maxFilesNum: 1,
+                showUpload: false,
+                layoutTemplates: {
+                                    main1: '{preview}\n' +
+                                        '<div class="kv-upload-progress hide"></div>\n' +
+                                        '<div class="input-group {class}">\n' +
+                                        '   {caption}\n' +
+                                        '   <div class="input-group-btn">\n' +
+                                        '       {remove}\n' +
+                                        '       {cancel}\n' +
+                                        '       {browse}\n' +
+                                        '   </div>\n' +
+                                        '</div>',
+                                    main2: '{preview}\n<div class="kv-upload-progress hide"></div>\n{remove}\n{cancel}\n{browse}\n',
+                                    preview: '<div class="file-preview {class}">\n' +
+                                        '    {close}\n' +
+                                        '    <div class="{dropClass}">\n' +
+                                        '    <div class="file-preview-thumbnails">\n' +
+                                        '    </div>\n' +
+                                        '    <div class="clearfix"></div>' +
+                                        '    <div class="file-preview-status text-center text-success"></div>\n' +
+                                        '    <div class="kv-fileinput-error"></div>\n' +
+                                        '    </div>\n' +
+                                        '</div>',
+                                    icon: '<span class="glyphicon glyphicon-file kv-caption-icon"></span>',
+                                    caption: '<div tabindex="-1" class="form-control file-caption {class}">\n' +
+                                        '   <div class="file-caption-name"></div>\n' +
+                                        '</div>',
+                                    btnDefault: '<button type="{type}" tabindex="500" title="{title}" class="{css}"{status}>{icon}{label}</button>',
+                                    btnLink: '<a href="{href}" tabindex="500" title="{title}" class="{css}"{status}>{icon}{label}</a>',
+                                    btnBrowse: '<div tabindex="500" class="{css}"{status}>{icon}{label}</div>',
+                                    progress: '<div class="progress">\n' +
+                                        '    <div class="progress-bar progress-bar-success progress-bar-striped text-center" role="progressbar" aria-valuenow="{percent}" aria-valuemin="0" aria-valuemax="100" style="width:{percent}%;">\n' +
+                                        '        {percent}%\n' +
+                                        '     </div>\n' +
+                                        '</div>',
+                                    footer: '<div class="file-thumbnail-footer">\n' +
+                                        '    <div class="file-caption-name" style="width:{width}">{caption}</div>\n' +
+                                        '    {progress} {actions}\n' +
+                                        '</div>',
+                                    actions: '<div class="file-actions">\n' +
+                                        '    <div class="file-footer-buttons">\n' +
+                                        '        {delete} {other}' +
+                                        '    </div>\n' +
+                                        '    {drag}\n' +
+                                        '    <div class="file-upload-indicator" title="{indicatorTitle}">{indicator}</div>\n' +
+                                        '    <div class="clearfix"></div>\n' +
+                                        '</div>',
+                                    actionDelete: '<button type="button" class="kv-file-remove {removeClass}" title="{removeTitle}"{dataUrl}{dataKey}>{removeIcon}</button>\n',
+                                    actionDrag: '<span class="file-drag-handle {dragClass}" title="{dragTitle}">{dragIcon}</span>'
+                                }
+            })
+        });
+    })
+
+    function AllGood() {
+        var valido = true;
+        console.log($('#imagen_archivo'))
+        if (!$('#imagen_archivo').val()) {
+            swal('Operacion Fallida', 'Debe seleccionar una imagen para subir', 'error');
+            valido = false;
+        }
+        return valido;
+    }
+
+        $('.page-drop').click(function () {
+            $('#max-entries-button').html($(this).text()+'<span class="caret"></span>')
+            max_entries = parseInt($(this).text())
+            query(main_route)
+        })
+
+
+        $('.page').click(function () {
+            $('.entries-light-purple').toggleClass('entries-light-purple bg-deep-purple')
+            $(this).addClass('entries-light-purple')
+            $(this).removeClass('bg-deep-purple')
+            max_entries = parseInt($(this).text())
+            query(main_route)
+        })
+
+        $(".like_search_input").on('keyup', function (e) {
+            if (e.keyCode == 13) {
+                like_search = $(this).val()
+                query(main_route)
+            }
+        })
+
+        $('#like_search_button').click(function () {
+            like_search = $("#like_search_input").val()
+            query(main_route)
+        })
+
+        $('#redo_button').click(function () {
+            default_values()
+            query(main_route)
+        })
+
+        $('.order_by_th').click(function () {
+            $('.order_by_th').find('.fa').remove()
+            if(order_by == $(this).attr('data-name')){
+                ascendant = !ascendant
+            } else {
+                order_by = $(this).attr('data-name')
+                ascendant = true
+            }
+            if (ascendant){
+                $(this).append("<i class='fa fa-sort-asc' aria-hidden='true'></i>")
+            }else{
+                $(this).append("<i class='fa fa-sort-desc' aria-hidden='true'></i>")
+            }
+            query(main_route)
+        })
+        show_search()
+
+        //setInterval(function () { query(main_route) }, 7000)
+    </script>
+    {% end %}
+{% end %}

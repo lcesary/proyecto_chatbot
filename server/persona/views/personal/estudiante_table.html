@@ -1,0 +1,24 @@
+
+{% for c in objects %}
+{% if 'Estudiante' in c.tipo %}
+<tr>
+    <td>{{ c.id }}</td>
+    <td>{{ c.codigo }}</td>
+    <td>{{ c.nombre }}</td>
+    <td>{{ c.apellido }}</td>
+    <td>{{ c.telefono }}</td>
+    <td>{{ c.sexo }}</td>
+    <td>{{ c.direccion }}</td>
+    <td>{{ c.tipo }}</td>
+    <td><img src="{{ c.foto }}" alt="" style="width: 100px; height: 60px;"/></td>
+    <td align="center">
+        {% if 'personal_update' in privileges %}
+            <button id="edit" data-json="{{c.id}}" type="button" class="btn bg-indigo waves-effect waves-light edit" title="Editar"><i class="material-icons">create</i></button>
+        {% end %}
+        {% if 'personal_delete' in privileges %}
+            <button id="delete" data-json="{{c.id}}" type="button" class="btn bg-red waves-effect waves-light delete" title="Eliminar"><i class="material-icons">clear</i></button>
+        {% end %}
+    </td>
+</tr>
+{% end %}
+{% end %}
