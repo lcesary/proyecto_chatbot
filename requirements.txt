@@ -7,13 +7,13 @@ schedule
 requests
 openpyxl
 image
-
+PyMySQL
 python-dateutil
 pyfcm
 pytz
 xhtml2pdf
 PyJWT
-
+cx_oracle
 fpdf
 xlwt
 numpy
