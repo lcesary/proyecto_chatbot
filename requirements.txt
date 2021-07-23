@@ -7,7 +7,6 @@ schedule
 requests
 openpyxl
 image
-PyMySQL
 python-dateutil
 pyfcm
 pytz
