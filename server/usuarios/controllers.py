@@ -160,6 +160,15 @@ class RolController(CrudController):
         '/rol_delete': {'POST': 'delete_rol'}
     }
 
+    def index(self):
+        self.set_session()
+        self.verif_privileges()
+        result = self.manager(self.db).list_all()
+        result['privileges'] = UsuarioManager(self.db).get_privileges(self.get_user_id(), self.request.uri)
+        result.update(self.get_extra_data())
+        self.render(self.html_index, **result)
+        self.db.close()
+
     def get_extra_data(self):
         aux = super().get_extra_data()
         aux['modulos'] = ModuloManager(self.db).list_all()

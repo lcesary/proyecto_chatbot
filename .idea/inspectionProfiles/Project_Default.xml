@@ -4,7 +4,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="37">
+          <list size="38">
             <item index="0" class="java.lang.String" itemvalue="google-python-cloud-debugger" />
             <item index="1" class="java.lang.String" itemvalue="image" />
             <item index="2" class="java.lang.String" itemvalue="PyJWT" />
@@ -42,6 +42,7 @@
             <item index="34" class="java.lang.String" itemvalue="pyparsing" />
             <item index="35" class="java.lang.String" itemvalue="idna" />
             <item index="36" class="java.lang.String" itemvalue="Pillow" />
+            <item index="37" class="java.lang.String" itemvalue="sqlalchemy" />
           </list>
         </value>
       </option>

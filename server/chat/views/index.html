@@ -1,10 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends ../../common/views/layout.html %}
+{% block style %}
+{% set user = usuario %}
+    <style>
+        .accion {
+            cursor: pointer
+        }
+    </style>
+
+    <script src="resources/js/functions.js"></script>
+
+    <script>
+        main_route = '/chat'
+
+        function default_values() {
+            page_nr = 1
+            max_entries = 10
+            like_search = ""
+            order_by = ""
+            ascendant = true
+        }
+
+        default_values()
+    </script>
+{% end %}
+{% block content %}
+<div class="header"><h2>chat</h2>
+    <br>
+    <div>
+        <section>
+            <iframe
+                allow="microphone;"
+                width="350"
+                height="430"
+                src="https://console.dialogflow.com/api-client/demo/embedded/2fd91dc8-eb52-438d-88d3-4e9b6cb45171">
+            </iframe>
+        </section>
+    </div>
+</div>
+
+    {% end %}
+{% block script %}
+<script>
+
+     $( document ).ready(function() {
+        });
+
+    $('.enviar').click(function () {
+        const formulario = document.querySelector('#mensaje');
+        const texto = formulario.value.toLowerCase();
+        console.log(texto);
+        objeto = JSON.stringify({
+                'ip': $('#ip').val(),
+                'texto': texto,
+            });
+        ruta = "/chat_insert";
+            $.ajax({
+                url: ruta,
+                type: "post",
+                data:{object: objeto, _xsrf: getCookie("_xsrf")},
+                async: false
+            }).done(function (response) {
+                debugger
+                response=JSON.parse(response);
+                if (response.success){
+                    showMessage(response.message, "success", "ok");
+                    $('.modal-backdrop').remove();
+                    $('body').removeClass('modal-open');
+                    $('#form').modal('hide')
+                    query(main_route)
+                }else{
+                    showMessage(response.message, "danger", "remove");
+                    $("#submit_imagen").waitMe("hide");
+                }
+                window.location = main_route
+            })
+        formulario.value = ""
+    })
+</script>
+{% end %}

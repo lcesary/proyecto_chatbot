@@ -210,7 +210,7 @@ class RolManager(SuperManager):
         return a
 
     def list_all(self):
-        return dict(objects=self.db.query(Rol).filter(Rol.nombre != "ADMINISTRADOR").distinct())
+        return dict(objects=self.db.query(Rol).distinct())
 
     def get_all(self):
         return self.db.query(Rol).filter(Rol.enabled == True).filter(Rol.nombre != "ADMINISTRADOR")

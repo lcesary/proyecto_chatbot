@@ -21,9 +21,9 @@ global image_report
 image_report = 'server/common/resources/images/sabsa-xls.png'
 
 
-class PersonaManager(SuperManager):
+class ChatManager(SuperManager):
     def __init__(self, db):
-        super().__init__(Persona, db)
+        super().__init__(Chat, db)
 
     def obtener_x_codigo(self, codigo):
         return self.db.query(self.entity).filter(self.entity.codigo == codigo).first()
@@ -32,7 +32,7 @@ class PersonaManager(SuperManager):
         return self.db.query(self.entity).filter(self.entity.enabled == True).all()
 
     def list_all(self):
-        return dict(objects=self.db.query(self.entity).filter(self.entity.enabled == True))
+        return dict(objects=self.db.query(self.entity).all())
 
     def listar_todo(self):
         return self.db.query(self.entity).filter(self.entity.enabled == True)

@@ -2,8 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f126ec5e-94ec-4452-a318-afdd86b56f49" name="Default" comment="Se realizaron las siguientes modificaciones:&#10;*se agrego validacion con token">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/chat/controllers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/chat/managers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/chat/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/chat/scripts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/chat/tutorial" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/chat/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/proyecto_base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proyecto_base.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/common/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/common/views/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/initialize_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/initialize_database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mapas/mapa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/mapas/mapas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/rastreo/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/chat/servicio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/rastreo/controllers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/rastreo/managers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/rastreo/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/rastreo/views/ubicacion/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/rastreo/views/ubicacion/mapa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/rastreo/views/ubicacion/table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/rastreo/views/ubicacion/ubicacion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/servicio/controllers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/usuarios/controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/usuarios/controllers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/usuarios/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/usuarios/managers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/settings.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,11 +50,18 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
     <option name="GROUP_SCHEMA" value="true" />
     <option name="GROUP_CONTENTS" value="false" />
     <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="proyecto_elfec" />
@@ -35,8 +69,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -57,10 +91,11 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="layou&#9;FILE&#9;file://E:/Proyectos/proyecto_elfec/server/common/views/layout.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/servicio.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,25 +104,24 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\lenri\Documents\proyecto SIG\Asistencia2\server\rastreo" />
-      <recent name="C:\Users\lenri\Documents\proyecto SIG\Asistencia2\server\common\resources\plugins\sweetalert2" />
-      <recent name="C:\Users\lenri\Documents\proyecto SIG\Asistencia2\server\common\resources" />
-      <recent name="C:\Users\lenri\Documents\proyecto SIG\Asistencia2\server\common" />
-      <recent name="C:\Users\lenri\Documents\proyecto SIG\Asistencia2\server\common\resources\resources\plugins\bootstrap-select\js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\proyecto sw\proyecto_chatbot\server\chat\views" />
       <recent name="C:\Users\lenri\Documents\proyecto SIG\Asistencia2\server\rastreo" />
       <recent name="C:\Users\lenri\Documents\proyecto SIG\Asistencia2\server\persona" />
       <recent name="E:\Proyectos\proyecto_elfec\server\actividades\views\asignacion" />
       <recent name="E:\Proyectos\proyecto_elfec\server\common\resources\images" />
-      <recent name="E:\Proyectos\proyecto_elfec\server\actividades\views\inspecciones" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\proyecto sw\proyecto_chatbot\server\chat" />
+      <recent name="C:\Users\lenri\Documents\proyecto SIG\Asistencia2\server\rastreo" />
+      <recent name="C:\Users\lenri\Documents\proyecto SIG\Asistencia2\server\common\resources\plugins\sweetalert2" />
+      <recent name="C:\Users\lenri\Documents\proyecto SIG\Asistencia2\server\common\resources" />
+      <recent name="C:\Users\lenri\Documents\proyecto SIG\Asistencia2\server\common" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run_db">
+  <component name="RunManager" selected="Python.run_server">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -108,13 +142,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Asistencia2/server/operaciones/views/bitacora/index.html">
-      <method v="2" />
-    </configuration>
     <configuration name="mapa.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Asistencia2/server/rastreo/views/ubicacion/mapa.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="mapa.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Asistencia2/server/mapas/mapa.html">
       <method v="2" />
     </configuration>
     <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
@@ -196,6 +224,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="servicio (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="proyecto_base" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/servicio.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="servicio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="proyecto_base" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server/chat" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/chat/servicio.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -206,19 +278,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="JavaScript Debug.mapa.html (1)" />
-      <item itemvalue="JavaScript Debug.mapa.html" />
       <item itemvalue="Python.run_db" />
       <item itemvalue="Python.run_server" />
+      <item itemvalue="Python.servicio" />
+      <item itemvalue="Python.servicio (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run_db" />
         <item itemvalue="Python.run_server" />
+        <item itemvalue="Python.run_db" />
+        <item itemvalue="Python.servicio" />
+        <item itemvalue="Python.servicio (1)" />
         <item itemvalue="JavaScript Debug.mapa.html (1)" />
-        <item itemvalue="JavaScript Debug.mapa.html" />
-        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -253,7 +325,14 @@
       <workItem from="1610942271668" duration="736000" />
       <workItem from="1626569031267" duration="5853000" />
       <workItem from="1626578832952" duration="2395000" />
-      <workItem from="1627025166613" duration="3005000" />
+      <workItem from="1627025166613" duration="3404000" />
+      <workItem from="1627323730014" duration="2059000" />
+      <workItem from="1627678094370" duration="1176000" />
+      <workItem from="1627737768183" duration="231000" />
+      <workItem from="1627773488548" duration="4912000" />
+      <workItem from="1627826913943" duration="13356000" />
+      <workItem from="1627910140518" duration="3428000" />
+      <workItem from="1627925029059" duration="14042000" />
     </task>
     <task id="LOCAL-00001" summary="se arreglo la vista de la bitacora con los atributos nombre y apellido">
       <created>1539806928323</created>
@@ -594,15 +673,6 @@
     <option name="localTasksCounter" value="49" />
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -654,30 +724,79 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1626569152286" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1626578829125">
+    <state x="1815" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1627952846955">
+      <screen x="1366" y="0" width="1366" height="728" />
+    </state>
+    <state x="449" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627927966258" />
+    <state x="1815" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627952846955" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1627928449569">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1626578829125" />
-    <state width="1323" height="206" key="GridCell.Tab.0.bottom" timestamp="1627028067916">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627928449569" />
+    <state width="1323" height="263" key="GridCell.Tab.0.bottom" timestamp="1627960799148">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="206" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627028067916" />
-    <state width="1323" height="206" key="GridCell.Tab.0.center" timestamp="1627028067915">
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829398103" />
+    <state width="1323" height="263" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627960799148" />
+    <state width="1323" height="287" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953117424" />
+    <state width="1323" height="263" key="GridCell.Tab.0.center" timestamp="1627960799147">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="206" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627028067915" />
-    <state width="1323" height="206" key="GridCell.Tab.0.left" timestamp="1627028067915">
+    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829398103" />
+    <state width="1323" height="263" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627960799147" />
+    <state width="1323" height="287" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953117424" />
+    <state width="1323" height="263" key="GridCell.Tab.0.left" timestamp="1627960799147">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="206" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627028067915" />
-    <state width="1323" height="206" key="GridCell.Tab.0.right" timestamp="1627028067915">
+    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829398102" />
+    <state width="1323" height="263" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627960799147" />
+    <state width="1323" height="287" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953117424" />
+    <state width="1323" height="263" key="GridCell.Tab.0.right" timestamp="1627960799147">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="206" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627028067915" />
+    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829398103" />
+    <state width="1323" height="263" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627960799147" />
+    <state width="1323" height="287" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953117424" />
+    <state width="1323" height="287" key="GridCell.Tab.1.bottom" timestamp="1627959306602">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="273" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829406438" />
+    <state width="1323" height="287" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627959306602" />
+    <state width="1323" height="287" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953113798" />
+    <state width="1323" height="287" key="GridCell.Tab.1.center" timestamp="1627959306602">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="273" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829406438" />
+    <state width="1323" height="287" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627959306602" />
+    <state width="1323" height="287" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953113798" />
+    <state width="1323" height="287" key="GridCell.Tab.1.left" timestamp="1627959306602">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="273" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829406438" />
+    <state width="1323" height="287" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627959306602" />
+    <state width="1323" height="287" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953113798" />
+    <state width="1323" height="287" key="GridCell.Tab.1.right" timestamp="1627959306602">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="273" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829406438" />
+    <state width="1323" height="287" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627959306602" />
+    <state width="1323" height="287" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953113798" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1627952843110">
+      <screen x="1366" y="0" width="1366" height="728" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627952843110" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1627911527915">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627911527915" />
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1626577933862">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1626577933862" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1627910153531">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627910153531" />
     <state x="379" y="96" width="607" height="536" key="find.popup" timestamp="1626580635500">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -721,6 +840,46 @@
           <line>34</line>
           <option name="timeStamp" value="1281" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/chat/scripts.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="1283" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/chat/scripts.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="1285" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/chat/scripts.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="1289" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/chat/scripts.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="1290" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/usuarios/managers.py</url>
+          <line>128</line>
+          <option name="timeStamp" value="1295" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/chat/controllers.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="1297" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/chat/managers.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="1298" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/server/chat/managers.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="1299" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="jinja2-line">
           <url>file://$PROJECT_DIR$/server/usuarios/views/usuario/index.html</url>
           <line>58</line>
@@ -738,8 +897,10 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Asistencia2$run_db.coverage" NAME="run_db Coverage Results" MODIFIED="1626569389319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_chatbot$servicio__1_.coverage" NAME="servicio (1) Coverage Results" MODIFIED="1627928329490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />
     <SUITE FILE_PATH="coverage/Asistencia2$run_server.coverage" NAME="run_server Coverage Results" MODIFIED="1626580329441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/proyecto_chatbot$run_db.coverage" NAME="run_db Coverage Results" MODIFIED="1627028067900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/proyecto_chatbot$run_server.coverage" NAME="run_server Coverage Results" MODIFIED="1627025176332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_chatbot$run_db.coverage" NAME="run_db Coverage Results" MODIFIED="1627960780593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_chatbot$servicio.coverage" NAME="servicio Coverage Results" MODIFIED="1627959300812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/chat" />
+    <SUITE FILE_PATH="coverage/proyecto_chatbot$run_server.coverage" NAME="run_server Coverage Results" MODIFIED="1627960799130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
