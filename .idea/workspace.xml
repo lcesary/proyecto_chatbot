@@ -2,35 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f126ec5e-94ec-4452-a318-afdd86b56f49" name="Default" comment="Se realizaron las siguientes modificaciones:&#10;*se agrego validacion con token">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/chat/controllers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/chat/managers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/chat/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/chat/scripts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/chat/tutorial" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/chat/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/proyecto_base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proyecto_base.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/common/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/common/views/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/initialize_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/initialize_database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mapas/mapa.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/mapas/mapas.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/rastreo/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/chat/servicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/rastreo/controllers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/rastreo/managers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/rastreo/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/rastreo/views/ubicacion/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/rastreo/views/ubicacion/mapa.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/rastreo/views/ubicacion/table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/rastreo/views/ubicacion/ubicacion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/servicio/controllers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/usuarios/controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/usuarios/controllers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/usuarios/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/usuarios/managers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/settings.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +67,7 @@
     <property name="SearchEverywhereHistoryKey" value="layou&#9;FILE&#9;file://E:/Proyectos/proyecto_elfec/server/common/views/layout.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/servicio.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -332,7 +304,7 @@
       <workItem from="1627773488548" duration="4912000" />
       <workItem from="1627826913943" duration="13356000" />
       <workItem from="1627910140518" duration="3428000" />
-      <workItem from="1627925029059" duration="14042000" />
+      <workItem from="1627925029059" duration="14501000" />
     </task>
     <task id="LOCAL-00001" summary="se arreglo la vista de la bitacora con los atributos nombre y apellido">
       <created>1539806928323</created>
@@ -729,57 +701,57 @@
     </state>
     <state x="449" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627927966258" />
     <state x="1815" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627952846955" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1627928449569">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1627962484979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627928449569" />
-    <state width="1323" height="263" key="GridCell.Tab.0.bottom" timestamp="1627960799148">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627962484979" />
+    <state width="1323" height="293" key="GridCell.Tab.0.bottom" timestamp="1627962558224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829398103" />
-    <state width="1323" height="263" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627960799148" />
+    <state width="1323" height="293" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627962558224" />
     <state width="1323" height="287" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953117424" />
-    <state width="1323" height="263" key="GridCell.Tab.0.center" timestamp="1627960799147">
+    <state width="1323" height="293" key="GridCell.Tab.0.center" timestamp="1627962558224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829398103" />
-    <state width="1323" height="263" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627960799147" />
+    <state width="1323" height="293" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627962558224" />
     <state width="1323" height="287" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953117424" />
-    <state width="1323" height="263" key="GridCell.Tab.0.left" timestamp="1627960799147">
+    <state width="1323" height="293" key="GridCell.Tab.0.left" timestamp="1627962558224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829398102" />
-    <state width="1323" height="263" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627960799147" />
+    <state width="1323" height="293" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627962558224" />
     <state width="1323" height="287" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953117424" />
-    <state width="1323" height="263" key="GridCell.Tab.0.right" timestamp="1627960799147">
+    <state width="1323" height="293" key="GridCell.Tab.0.right" timestamp="1627962558224">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829398103" />
-    <state width="1323" height="263" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627960799147" />
+    <state width="1323" height="293" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627962558224" />
     <state width="1323" height="287" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953117424" />
-    <state width="1323" height="287" key="GridCell.Tab.1.bottom" timestamp="1627959306602">
+    <state width="1323" height="287" key="GridCell.Tab.1.bottom" timestamp="1627962487396">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="273" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829406438" />
-    <state width="1323" height="287" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627959306602" />
+    <state width="1323" height="287" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627962487396" />
     <state width="1323" height="287" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953113798" />
-    <state width="1323" height="287" key="GridCell.Tab.1.center" timestamp="1627959306602">
+    <state width="1323" height="287" key="GridCell.Tab.1.center" timestamp="1627962487396">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="273" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829406438" />
-    <state width="1323" height="287" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627959306602" />
+    <state width="1323" height="287" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627962487396" />
     <state width="1323" height="287" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953113798" />
-    <state width="1323" height="287" key="GridCell.Tab.1.left" timestamp="1627959306602">
+    <state width="1323" height="287" key="GridCell.Tab.1.left" timestamp="1627962487395">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="273" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829406438" />
-    <state width="1323" height="287" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627959306602" />
+    <state width="1323" height="287" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627962487395" />
     <state width="1323" height="287" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953113798" />
-    <state width="1323" height="287" key="GridCell.Tab.1.right" timestamp="1627959306602">
+    <state width="1323" height="287" key="GridCell.Tab.1.right" timestamp="1627962487396">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="273" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1627829406438" />
-    <state width="1323" height="287" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627959306602" />
+    <state width="1323" height="287" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1627962487396" />
     <state width="1323" height="287" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1627953113798" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1627952843110">
       <screen x="1366" y="0" width="1366" height="728" />
@@ -899,8 +871,8 @@
     <SUITE FILE_PATH="coverage/Asistencia2$run_db.coverage" NAME="run_db Coverage Results" MODIFIED="1626569389319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proyecto_chatbot$servicio__1_.coverage" NAME="servicio (1) Coverage Results" MODIFIED="1627928329490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />
     <SUITE FILE_PATH="coverage/Asistencia2$run_server.coverage" NAME="run_server Coverage Results" MODIFIED="1626580329441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/proyecto_chatbot$run_db.coverage" NAME="run_db Coverage Results" MODIFIED="1627960780593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_chatbot$run_db.coverage" NAME="run_db Coverage Results" MODIFIED="1627962500145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proyecto_chatbot$servicio.coverage" NAME="servicio Coverage Results" MODIFIED="1627959300812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/chat" />
-    <SUITE FILE_PATH="coverage/proyecto_chatbot$run_server.coverage" NAME="run_server Coverage Results" MODIFIED="1627960799130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proyecto_chatbot$run_server.coverage" NAME="run_server Coverage Results" MODIFIED="1627962558211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
