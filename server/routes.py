@@ -26,6 +26,7 @@ def get_handlers():
     # MCatalogo
     handlers.extend(get_routes(PersonaController))
     handlers.extend(get_routes(PeticionController))
+    handlers.extend(get_routes(BitacoraController))
 
 
     handlers.append((r'/resources/(.*)', StaticFileHandler, {'path': os.path.join(os.path.dirname(__file__), 'common', 'resources')}))

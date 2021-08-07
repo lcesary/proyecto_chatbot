@@ -27,8 +27,8 @@ image_report = "server/common/resources/images/pst.jpg"
 class BitacoraController(CrudController):
 
     manager = BitacoraManager
-    html_index = "operaciones/views/ubicacion/index.html"
-    html_table = "operaciones/views/ubicacion/table.html"
+    html_index = "operaciones/views/bitacora/index.html"
+    html_table = "operaciones/views/bitacora/table.html"
     routes = {
         '/ubicacion': {'GET': 'index', 'POST': 'table'}
     }

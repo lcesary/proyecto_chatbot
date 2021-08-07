@@ -14,7 +14,7 @@ from ..chat.scripts import insertions as chat_insertions
 def main():
     reload_db()
     user_insertions()
-    #mpersonal_insertions()
+    mpersonal_insertions()
     chat_insertions()
     print('Database created/updated correctly!')
 
