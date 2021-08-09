@@ -23,9 +23,9 @@ def insertions():
         if perfil_m is None:
             perfil_m = Modulo(title='Perfil Usuario', route='/usuario_profile', name='perfil', icon='dvr')
 
-        bitacora_m = session.query(Modulo).filter(Modulo.name == 'ubicacion').first()
+        bitacora_m = session.query(Modulo).filter(Modulo.name == 'bitacora').first()
         if bitacora_m is None:
-            bitacora_m = Modulo(title='Bitacora', route='/ubicacion', name='ubicacion', icon='dvr')
+            bitacora_m = Modulo(title='Bitacora', route='/bitacora', name='bitacora', icon='dvr')
 
         user_m.children.append(roles_m)
         user_m.children.append(usuarios_m)

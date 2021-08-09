@@ -30,5 +30,5 @@ class BitacoraController(CrudController):
     html_index = "operaciones/views/bitacora/index.html"
     html_table = "operaciones/views/bitacora/table.html"
     routes = {
-        '/ubicacion': {'GET': 'index', 'POST': 'table'}
+        '/bitacora': {'GET': 'index', 'POST': 'table'}
     }

@@ -9,13 +9,16 @@ from server.persona.scripts import insertions as mpersonal_insertions
 from .models import Base
 from ..usuarios.scripts import insertions as user_insertions
 from ..chat.scripts import insertions as chat_insertions
-
+from ..ubicacion.scripts import insertions as ubicacion_insertions
+from ..pago.scripts import insertions as pago_insertions
 
 def main():
     reload_db()
     user_insertions()
-    mpersonal_insertions()
+    # mpersonal_insertions()
     chat_insertions()
+    ubicacion_insertions()
+    pago_insertions()
     print('Database created/updated correctly!')
 
 

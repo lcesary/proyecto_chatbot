@@ -6,7 +6,13 @@
     <td>{{ usuarios.correo }}</td>
     <td>{{ usuarios.username }}</td>
     <td>{{ usuarios.rol.nombre }}</td>
-    <td>{{ usuarios.persona.nombre }}</td>
+    {% if usuarios.foto==" " %}
+    <td><img src="resources/images/sinImagen.jpg" alt="" style="width: 100px; height: 60px;"/></td>
+    {% else%}
+    <td><img src="{{ usuarios.foto }}" alt="" style="width: 100px; height: 60px;"/></td>
+    {% end%}
+
+
     <td align="center">
          {% if 'usuario_delete' in privileges %}
             <div {%if usuarios.enabled%} title="Activo" {% else %} title="Inhabilitado" {% end %}>
@@ -17,7 +23,7 @@
     </td>
     <td align="center">
     {% if 'usuario_update' in privileges %}
-        <button id="edit" data-json="{{usuarios.id}}" type="button" class="btn button-green-own waves-effect waves-light edit" title="Editar"><i class="material-icons blanco">create</i></button>
+        <button id="edit" data-json="{{usuarios.id}}" type="button" class="btn bg-indigo waves-effect waves-light edit" title="Editar"><i class="material-icons blanco">create</i></button>
     {% end %}
     </td>
 </tr>

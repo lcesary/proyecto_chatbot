@@ -1,0 +1,141 @@
+{%extends ../../../common/views/layout.html%}
+{% block style %}
+{% set user = usuario %}
+    <style>
+        .accion {
+            cursor: pointer
+        }
+    </style>
+
+    <script src="resources/js/functions.js"></script>
+
+    <script>
+        main_route = '/carrera'
+
+        function default_values() {
+            page_nr = 1
+            max_entries = 10
+            like_search = ""
+            order_by = ""
+            ascendant = true
+        }
+
+        default_values()
+    </script>
+{% end %}
+{% block content %}
+
+{% if 'carrera_insert' in privileges or 'carrera_update' in privileges %}
+
+{% end %}
+
+
+<div class="header"><h2>Carreras</h2>
+        <ul class="nav nav-tabs tab-nav-right" role="tablist">
+              <li role="presentation" class="active"><a href="#vista_enviada" data-toggle="tab" aria-expanded="false">Carreras</a></li>
+        </ul>
+</div>
+
+<div class="body">
+    <div class="tab-content">
+            <div class="row">
+                <div class="body table-responsive">
+                    <table id="data_table" class="table">
+                        <thead>
+                            <tr>
+                                <th class="order_by_th" data-name="name">Id</th>
+                                <th class="order_by_th" data-name="date">Fecha</th>
+                                <th class="order_by_th" data-name="date">Monto</th>
+                                <th class="order_by_th" data-name="date">Conductor</th>
+                                <th class="order_by_th" data-name="date">Tipo</th>
+                                <th class="order_by_th" data-name="date">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_content2">
+                            {% include 'table.html' %}
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </div>
+</div>
+
+    {% end %}
+
+{% block script %}
+<script>
+
+
+
+{% if 'carrera_insert' in privileges %}
+    $('#new').click(function () {
+            $('#id').val('')
+            $('#codigo').val('')
+            $('#nombre').val('')
+            $('#apellido').val('')
+            $('#telefono').val('')
+            $('#direccion').val('')
+            $('#sexo').val('')
+            $('#tipo').val('')
+            $('#especialidad').val('')
+            $('#cargo').val('')
+            $('#transporte').val('')
+            $('#employee').val('')
+            $('#employee').selectpicker('render')
+            $('#imagen_archivo').fileinput('clear');
+
+            verif_inputs()
+            $('#id_div').hide()
+            $('#insert').show()
+            $('#update').hide()
+            $('#imagen_insert').show()
+            $('#employeee').hide()
+            $('#form').modal('show')
+    })
+
+$('#submit_imagen').on('submit', function (e) {
+e.preventDefault();
+            var data = new FormData($(this)[0]);
+            objeto = JSON.stringify({
+                'ip': $('#ip').val(),
+                'codigo': parseInt($('#codigo').val()),
+                'nombre': $('#nombre').val(),
+                'apellido': $('#apellido').val(),
+                'telefono': parseInt($('#telefono').val()),
+                'direccion': $('#direccion').val(),
+                'sexo': $('#sexo').val(),
+                'tipo': $('#tipo').val(),
+                'especialidad': $('#especialidad').val(),
+                'cargo': $('#cargo').val(),
+                'transporte': $('#transporte').val(),
+            });
+            ruta = "{{privileges['carrera_insert'].route}}";
+                    data.append('object', objeto)
+                    data.append('_xsrf',getCookie("_xsrf"))
+                    $.ajax({
+                        url: ruta,
+                        type: "post",
+                        data: data,
+                        contentType: false,
+                        processData: false,
+                        cache: false,
+                        async: false
+            }).done(function (response) {
+                response=JSON.parse(response);
+                if (response.success){
+                    showMessage(response.message, "success", "ok");
+                    $('.modal-backdrop').remove();
+                    $('body').removeClass('modal-open');
+                    $('#form').modal('hide')
+                    query(main_route)
+                }else{
+                    showMessage(response.message, "danger", "remove");
+                    $("#submit_imagen").waitMe("hide");
+                }
+                window.location = main_route
+            })
+        });
+    {% end %}
+
+</script>
+{% end %}

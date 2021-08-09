@@ -43,7 +43,8 @@ class UsuarioManager(SuperManager):
         return Error('unknown')
 
     def update(self, Usuarioupd):
-        Usuarioupd.password = hashlib.sha512(Usuarioupd.password.encode()).hexdigest()
+        if Usuarioupd.password != None:
+            Usuarioupd.password = hashlib.sha512(Usuarioupd.password.encode()).hexdigest()
         fecha = BitacoraManager(self.db).fecha_actual()
         b = Bitacora(fkusuario=Usuarioupd.id, ip=Usuarioupd.ip, accion="Se modificó un usuario.", fecha=fecha)
         super().insert(b)

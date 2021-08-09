@@ -55,6 +55,7 @@ class UsuarioController(CrudController):
         objeto = self.manager(self.db).entity(**diccionary)
         UsuarioManager(self.db).insert(objeto)
         self.respond(success=True, message='Insertado correctamente.')
+        self.db.close()
 
     def update(self):
         self.set_session()
@@ -64,6 +65,7 @@ class UsuarioController(CrudController):
         objeto = self.manager(self.db).entity(**diccionary)
         UsuarioManager(self.db).update(objeto)
         self.respond(success=True, message='Modificado correctamente.')
+        self.db.close()
 
     def delete_user(self):
         self.set_session()
@@ -83,12 +85,14 @@ class UsuarioController(CrudController):
         else:
             msg = 'Rol asignado dado de baja, no es posible habilitar el usuario.'
             self.respond(success=False, message=msg)
+        self.db.close()
 
     def activate_user(self):
         self.set_session()
         id = json.loads(self.get_argument("id"))
         UsuarioManager(self.db).activate_users(id, self.get_user_id(), self.request.remote_ip)
         self.respond(success=True, message='Usuario activado correctamente.')
+        self.db.close()
 
     def usuario_profile(self):
         user = self.get_user()
@@ -144,6 +148,7 @@ class UsuarioController(CrudController):
         id = json.loads(self.get_argument("id"))
         self.manager(self.db).update_codigo(id)
         self.respond(success=True, message='Modificado Correctamente!')
+        self.db.close()
 
     def fecha_actual(self):
         return datetime.now(pytz.timezone('America/La_Paz'))
@@ -182,6 +187,7 @@ class RolController(CrudController):
         objeto = self.manager(self.db).entity(**diccionary)
         RolManager(self.db).insert(objeto)
         self.respond(success=True, message='Insertado correctamente.')
+        self.db.close()
 
     def update(self):
         self.set_session()
@@ -191,6 +197,7 @@ class RolController(CrudController):
         objeto = self.manager(self.db).entity(**diccionary)
         RolManager(self.db).update(objeto)
         self.respond(success=True, message='Modificado correctamente.')
+        self.db.close()
 
     def delete_rol(self):
         self.set_session()
@@ -205,6 +212,7 @@ class RolController(CrudController):
         else:
             msg = 'Rol inhabilitado correctamente.'
         self.respond(success=True, message=msg)
+        self.db.close()
 
 
 class LoginController(SuperController):

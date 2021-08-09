@@ -31,12 +31,10 @@
         font-weight: bolder !important;
         color: #044f17 !important;
     }
+
 </style>
-
-
-
-
 <script src="resources/js/functions.js"></script>
+
 
 <script>
     main_route = '/usuario'
@@ -50,6 +48,7 @@
     }
     default_values()
 </script>
+
 {%end%}
 {%block content%}
 
@@ -63,11 +62,28 @@
     <div class="row clearfix">
         <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
         {% if 'usuario_insert' in privileges %}
-            <button id="new" type="button" class="btn button-green-own waves-effect" title="Nuevo">
+           <button id="new" type="button" class="btn bg-indigo waves-effect" title="Nuevo">
             <i class="material-icons blanco">add</i>
+            </button>
+            <button id="usuario_servicio" type="button" class="btn bg-indigo waves-effect" title="servicio">
+                <i class="material-icons blanco">cloud_download</i>
             </button>
         {% end %}
         </div>
+
+
+      <div id="rproc-loader" class="loader-wrapper" style="display: none">
+            <div class="loader loader-own">
+                <div class="preloader preloader-own">
+                    <div class="spinner-layer pl-teal">
+                        <div class="circle-clipper left"><div class="circle"></div></div>
+                        <div class="circle-clipper right"><div class="circle"></div></div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center inf-own">Cargando...</p>
+        </div>
+
         {% if 'usuario_query' in privileges %}
     </div>
     <div class="row">
@@ -80,7 +96,7 @@
                         <th class="order_by_th" data-name="mail">Correo </th>
                         <th class="order_by_th" data-name="usuarioname">Nombre de usuario </th>
                         <th class="order_by_th" data-name="condominio">Rol </th>
-                        <th class="order_by_th" data-name="enabled">Persona </th>
+                        <th class="order_by_th" data-name="condominio">Foto </th>
                         <th class="order_by_th" data-name="enabled">Estado </th>
                         <th class="actions_header">Acciones </th>
                     </tr>
@@ -98,9 +114,6 @@
 </div>
 {%end%}
 {% block script %}
-
-
-
     <script>
         $(document).ready(function () {
             $('#data_table').DataTable({
@@ -129,7 +142,6 @@
             $('#correo').val('')
             $('#username').val('')
             $('#password').val('')
-            $('#fkpersona').val('')
 
             $('#role_id').val('')
             $('#role_id').selectpicker('render')
@@ -144,32 +156,84 @@
             $('#form').modal('show')
         })
 
-        $('#insert').click(function () {
-            if(!validationInputSelects("form")){
-                objeto = JSON.stringify({
+$('#imagen_insert').on('click', function (e) {
+            e.preventDefault();
+            var data = new FormData($('#submit_imagen')[0]);
+        if(!validationInputSelects("form")) {
+            objeto = JSON.stringify({
                 'nombre': $('#nombre').val(),
                 'apellido': $('#apellido').val(),
                 'correo': $('#correo').val(),
                 'username': $('#username').val(),
                 'password': $('#password').val(),
-                'fkrol': parseInt($('#role_id').val()),
-                'fkpersona': parseInt($('#fkpersona').val())
-                })
-
-                ajax_call("{{privileges['usuario_insert'].route}}",
-                {_xsrf: getCookie("_xsrf"), object: objeto},
-                        null,
-                        function () {setTimeout(function(){window.location=main_route}, 2000);})
-                $('#form').modal('hide')
-            }else{
-                swal(
-                      'Error de datos.',
-                      'Hay campos vacios por favor verifique sus datos.',
-                      'error'
-                    )
+                'fkrol': parseInt($('#role_id').val())
+                });
+            ruta = "{{privileges['usuario_insert'].route}}";
+            data.append('object', objeto)
+            data.append('_xsrf',getCookie("_xsrf"))
+            render = null
+            callback = function () {
+                setTimeout
+                (function () {
+                    window.location = main_route
+                }, 2000);
             }
-        })
-        {% end %}
+            $.ajax({
+                    url: ruta,
+                    type: "post",
+                    data: data,
+                    contentType: false,
+                    processData: false,
+                    cache: false,
+                      async: true,
+            beforeSend: function () {
+               $("#rproc-loader").fadeIn(800);
+               $("#new").hide();
+            },
+            success: function () {
+               $("#rproc-loader").fadeOut(800);
+               $("#new").show();
+              $("#usuario_servicio").show();
+            }
+                }).done(function (response) {
+                response=JSON.parse(response);
+                if ("message" in response && response.message != '') {
+                    if (response.success) {
+                        showMessage(response.message, "success", "ok")
+                    } else {
+                        showMessage(response.message, "danger", "remove")
+                    }
+                }
+                if (callback != null) {
+                    callback(response)
+                }
+            })
+                $('#form').modal('hide')
+         }else {
+            swal(
+                    'Error de datos.',
+                    'Hay campos vacios por favor verifique sus datos.',
+                    'error'
+            )
+        }
+        });
+    {% end %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         {% if 'usuario_update' in privileges %}
         function attach_edit() {
             $('.edit').click(function () {
@@ -180,6 +244,7 @@
                     _xsrf: getCookie("_xsrf"),
                     object: obj
                 },function(response){
+                    console.log("tube")
                     console.log(response)
                     var self = response;
                     $('#id').val(self.id)
@@ -188,8 +253,6 @@
                     $('#correo').val(self.correo)
                     $('#username').val(self.username)
                     $('#password').val(self.password)
-                    $('#fkpersona').val(self.fkpersona)
-                    $('#fkpersona').selectpicker('render')
                     $('#role_id').val(self.fkrol)
                     $('#role_id').selectpicker('render')
                     clean_form()
@@ -203,19 +266,58 @@
             })
         }
 
-        $('#update').click(function () {
+
+
+
+
+
+    $('#imagen_update').on('click', function (e) {
+            console.log("update")
+            e.preventDefault();
+            var data = new FormData($('#submit_imagen')[0]);
+//            if (!AllGood()){ return }
             objeto = JSON.stringify({
                 'id': parseInt($('#id').val()),
                 'nombre': $('#nombre').val(),
                 'apellido': $('#apellido').val(),
                 'correo': $('#correo').val(),
                 'username': $('#username').val(),
-                'fkrol': parseInt($('#role_id').val()),
-                'fkpersona': parseInt($('#fkpersona').val())
+                'fkrol': parseInt($('#role_id').val())
+            });
+            ruta = "{{privileges['usuario_update'].route}}";
+            data.append('object', objeto)
+            data.append('_xsrf',getCookie("_xsrf"))
+            render = null
+            callback = function () {
+                setTimeout
+                (function () {
+                    window.location = main_route
+                }, 2000);
+            }
+            $.ajax({
+                url: ruta,
+                type: "post",
+                data: data,
+                contentType: false,
+                processData: false,
+                cache: false,
+                async: false
+            }).done(function (response) {
+                response=JSON.parse(response);
+                if ("message" in response && response.message != '') {
+                    if (response.success) {
+                        showMessage(response.message, "success", "ok")
+                    } else {
+                        showMessage(response.message, "danger", "remove")
+                    }
+                }
+                if (callback != null) {
+                    callback(response)
+                }
             })
-            ajax_call("{{privileges['usuario_update'].route}}", {_xsrf: getCookie("_xsrf"), object: objeto}, null, function () {setTimeout(function(){window.location=main_route}, 2000);})
             $('#form').modal('hide')
-        })
+        });
+
         {% end %}
         reload_form()
         $('#role_id').selectpicker()
@@ -369,6 +471,34 @@
                 ajax_call("/usuario_codigo_reset", { id,_xsrf: getCookie("_xsrf")}, null, function () {setTimeout(function(){window.location=main_route}, 2000);})
             })
         })
+
+
+{% if 'usuario_insert' in privileges %}
+    $('#usuario_servicio').click(function () {
+                $.ajax({
+                    method: "GET",
+                    url: '/usuario_servicio',
+                  beforeSend: function () {
+               $("#rproc-loader").fadeIn(800);
+               $("#new").hide();
+                  },
+                  success: function () {
+                     $("#rproc-loader").fadeOut(800);
+                     $("#new").show();
+                    $("#usuario_servicio").show();
+                  }
+
+                }).done(function(response){
+                    response = JSON.parse(response)
+                }, null, function () {
+                setTimeout(function () {
+                    window.location = main_route
+                }, 2000);
+            }
+                )
+    })
+{% end %}
+
 
 </script>
 

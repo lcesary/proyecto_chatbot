@@ -21,11 +21,10 @@ class Usuario(Serializable, Base):
     activo = Column('cb_usuario_activo', Integer, default=0)
     token2 = Column('cb_usuario_token2', String(2000), nullable=True, default='Sin Token2')
     token = Column('cb_usuario_token', String(2000), nullable=True, default='Sin Token')
-    fkpersona = Column(Integer, ForeignKey('cb_persona.id'))
+    foto = Column('foto',String(2000),nullable=False,default='resources/images/sinImagen.jpg')
     enabled = Column('cb_usuario_enabled', Boolean, default=True)
 
     rol = relationship('Rol')
-    persona = relationship('Persona')
 
 
     def get_dict(self, way=None):
