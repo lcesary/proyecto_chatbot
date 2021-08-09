@@ -1,0 +1,17 @@
+
+{% for c in objects %}
+<tr>
+    <td>{{ c.id }}</td>
+     <td>{{ c.fecha.strftime("%d/%m/%Y %H:%M:%S") }}</td>
+    <td>{{ c.monto }}</td>
+    {%if c.usuario is not None %}
+    <td>{{ c.usuario.nombre+" " }}{{ c.usuario.apellido }}</td>
+    {% end %}
+    <td>{{ c.tipo }}</td>
+    <td>{{ c.enabled }}</td>
+
+
+</tr>
+{% end %}
+
+

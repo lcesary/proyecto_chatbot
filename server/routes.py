@@ -6,6 +6,8 @@ from .main.controllers import Index
 from tornado.web import StaticFileHandler
 from .operaciones.controllers import *
 from .chat.controllers import *
+from .pago.controllers import *
+from .ubicacion.controllers import *
 
 def get_handlers():
     """Retorna una lista con las rutas, sus manejadores y datos extras."""
@@ -24,10 +26,12 @@ def get_handlers():
     handlers.extend(get_routes(ChatController))
 
     # MCatalogo
-    handlers.extend(get_routes(PersonaController))
-    handlers.extend(get_routes(PeticionController))
+    #handlers.extend(get_routes(PersonaController))
+    #handlers.extend(get_routes(PeticionController))
     handlers.extend(get_routes(BitacoraController))
-
+    handlers.extend(get_routes(PagoController))
+    handlers.extend(get_routes(UbicacionController))
+    handlers.extend(get_routes(CarreraController))
 
     handlers.append((r'/resources/(.*)', StaticFileHandler, {'path': os.path.join(os.path.dirname(__file__), 'common', 'resources')}))
     return handlers
