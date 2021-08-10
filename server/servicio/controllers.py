@@ -16,11 +16,29 @@ class ApiUsuarioController(ApiController):
         '/api/v1/editar_usuario': {'POST': 'update_usuarios'},
         '/api/v1/crear_usuario': {'POST': 'insert'},
         '/api/v1/delete_usuario': {'POST': 'delete_usuarios'},
-        '/api/v1/crear_peticion': {'POST': 'crear_peticion'}
+        '/api/v1/crear_peticion': {'POST': 'crear_peticion'},
+        '/api/v1/login_usuario_mobile': {'POST': 'login_usuario_mobile'},
     }
 
     def check_xsrf_cookie(self):
         return
+
+    def login_usuario_mobile(self):
+        self.set_session()
+        try:
+            response = []
+            data = json.loads(self.request.body.decode('utf-8'))
+            validar = UsuarioManager(self.db).validar_usuario(data['username'],data['password'])
+            if validar == 1:
+                r  = UsuarioManager(self.db).listar_usuario(data['username'])
+                self.respond(response=validar, success=True, message="Usuario recuperados correctamente.")
+            else:
+                r = None
+                self.respond(response=validar, success=False, message="Datos del usuario son incorrecto.")
+        except Exception as e:
+            print(e)
+            self.respond(success=False, message="Ocurrio un error.")
+        self.db.close()
 
     def listar_usuarios(self):
         self.set_session()

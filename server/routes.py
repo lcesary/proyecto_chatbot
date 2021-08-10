@@ -8,6 +8,7 @@ from .operaciones.controllers import *
 from .chat.controllers import *
 from .pago.controllers import *
 from .ubicacion.controllers import *
+from .servicio.controllers import *
 
 def get_handlers():
     """Retorna una lista con las rutas, sus manejadores y datos extras."""
@@ -32,6 +33,9 @@ def get_handlers():
     handlers.extend(get_routes(PagoController))
     handlers.extend(get_routes(UbicacionController))
     handlers.extend(get_routes(CarreraController))
+
+    #servicio
+    handlers.extend(get_routes(ApiUsuarioController))
 
     handlers.append((r'/resources/(.*)', StaticFileHandler, {'path': os.path.join(os.path.dirname(__file__), 'common', 'resources')}))
     return handlers

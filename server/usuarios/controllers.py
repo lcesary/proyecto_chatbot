@@ -317,7 +317,7 @@ class ApiLoginController(SuperController):
 
 class ApiUserController(ApiController):
     routes = {
-        '/api/v1/login_usuario_mobile': {'POST': 'login_usuario_mobile'},
+
         '/api/v1/update_token_usuario': {'POST': 'update_token_usuario'},
         '/api/v1/listar_usuarios_privilegios': {'POST': 'listar_usuarios_privilegios'},
         '/api/v1/update_movil_privilegio': {'POST': 'update_movil_privilegio'},

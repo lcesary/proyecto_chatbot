@@ -19,6 +19,10 @@ class UsuarioManager(SuperManager):
     def __init__(self, db):
         super().__init__(Usuario, db)
 
+    def listar_usuario(self,usuario):
+        usuario=self.db.query(Usuario).filter(Usuario.username==usuario).first()
+        return usuario
+
     def name_role(self, rol):
         role = self.db.query(Rol).filter_by(id=rol).first()
         nombre_rol = role.name
