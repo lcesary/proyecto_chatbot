@@ -31,6 +31,10 @@ class UbicacionManager(SuperManager):
     def __init__(self, db):
         super().__init__(Ubicacion, db)
 
+    def listar_id(self,id):
+        a = self.db.query(Ubicacion).filter(Ubicacion.cliente == id).first()
+        return a
+
     def list_all(self):
         return dict(objects=self.db.query(Ubicacion).order_by(Ubicacion.id.asc()))
 
@@ -39,6 +43,9 @@ class UbicacionManager(SuperManager):
 
     def fecha(self):
         return fecha_zona.strftime('%Y/%d/%m')
+
+    def insert(self, object):
+        return super().insert(object)
 
 class CarreraManager(SuperManager):
     def __init__(self, db):

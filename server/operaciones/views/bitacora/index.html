@@ -99,8 +99,9 @@
                                   var map = new google.maps.Map(mapCanvas, mapOptions);
                                   placeMarker(map, latlng);
                                   google.maps.event.addListener(map, 'click', function(event) {
+                                      debugger
                                       placeMarker(map, event.latLng);
-      });
+                                  });
 
                             },
                             //Si no los entrega manda un alerta de error
@@ -123,6 +124,7 @@
 
                   $('#latitud').val(location.lat());
                   $('#longitud').val(location.lng());
+                  debugger
                   var infowindow = new google.maps.InfoWindow({
                       content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng()
                   });

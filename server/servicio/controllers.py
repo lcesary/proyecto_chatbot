@@ -6,11 +6,12 @@ from sqlalchemy.exc import IntegrityError
 from ..common.controllers import CrudController, SuperController, ApiController
 import os.path
 from ..usuarios.controllers import *
+from ..ubicacion.managers import *
 
 class ApiUsuarioController(ApiController):
 
     manager = UsuarioManager
-
+    ubicacion = UbicacionManager
     routes = {
         '/api/v1/listar_usuario': {'GET': 'listar_usuarios'},
         '/api/v1/editar_usuario': {'POST': 'update_usuarios'},
@@ -18,10 +19,30 @@ class ApiUsuarioController(ApiController):
         '/api/v1/delete_usuario': {'POST': 'delete_usuarios'},
         '/api/v1/crear_peticion': {'POST': 'crear_peticion'},
         '/api/v1/login_usuario_mobile': {'POST': 'login_usuario_mobile'},
+        '/api/v1/guardar_ubicacion': {'POST': 'guardar_ubicacion'},
     }
 
     def check_xsrf_cookie(self):
         return
+
+    def guardar_ubicacion(self):
+        self.set_session()
+        try:
+            response = []
+            data = json.loads(self.request.body.decode('utf-8'))
+            objetos = UbicacionManager(self.db).listar_id(data['usuario'])
+            if objetos != None:
+                objetos.latitud = data['latitud']
+                objetos.longitud = data['longitud']
+            else:
+                objetos = UbicacionManager(self.db).entity(**data)
+                objetos = Ubicacion(cliente=objetos.usuario, latitud=str(objetos.latitud), longitud=str(objetos.longitud))
+            respuesta = UbicacionManager(self.db).insert(objetos)
+            self.respond(response=data, success=True, message="Usuario recuperados correctamente.")
+        except Exception as e:
+            print(e)
+            self.respond(success=False, message="Ocurrio un error.")
+        self.db.close()
 
     def login_usuario_mobile(self):
         self.set_session()
@@ -31,7 +52,7 @@ class ApiUsuarioController(ApiController):
             validar = UsuarioManager(self.db).validar_usuario(data['username'],data['password'])
             if validar == 1:
                 r  = UsuarioManager(self.db).listar_usuario(data['username'])
-                self.respond(response=validar, success=True, message="Usuario recuperados correctamente.")
+                self.respond(response=r.get_dict(), success=True, message="Usuario recuperados correctamente.")
             else:
                 r = None
                 self.respond(response=validar, success=False, message="Datos del usuario son incorrecto.")

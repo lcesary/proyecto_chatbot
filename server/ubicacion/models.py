@@ -18,8 +18,8 @@ class Ubicacion(Serializable, Base):
     cliente = Column(Integer, ForeignKey("cb_usuarios_usuario.cb_usuario_id"))
     latitud = Column(String(255), nullable=True)
     longitud = Column(String(255), nullable=True)
-    estado = Column(String(255), nullable=False)
-    tipo = Column(String(255), nullable=False)
+    estado = Column(String(255), nullable=False,default=1)
+    tipo = Column(String(255), nullable=False,default=1)
     enabled = Column(Boolean, default=True)
 
     usuario = relationship('Usuario')
