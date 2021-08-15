@@ -46,6 +46,15 @@ class UsuarioManager(SuperManager):
             return u
         return Error('unknown')
 
+    def insertar(self, Usuario):
+        if Usuario.fkrol > 0:
+            Usuario.password = hashlib.sha512(Usuario.password.encode()).hexdigest()
+            codigo = self.get_random_string()
+            Usuario.codigo = codigo
+            u = super().insert(Usuario)
+            return u
+        return Error('unknown')
+
     def update(self, Usuarioupd):
         if Usuarioupd.password != None:
             Usuarioupd.password = hashlib.sha512(Usuarioupd.password.encode()).hexdigest()

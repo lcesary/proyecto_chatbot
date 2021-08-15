@@ -74,13 +74,11 @@ body {
       debugger
     const directions = directionsRenderer.getDirections();
     if (directions) {
-        debugger
       computeTotalDistance(directions);
     }
   });
 
   google.maps.event.addListener(map, 'click', function(event) {
-                                      debugger
                                         console.log(event.latLng)
                                         placeMarker(map,event.latLng)
                                   });

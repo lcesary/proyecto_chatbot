@@ -20,10 +20,62 @@ class ApiUsuarioController(ApiController):
         '/api/v1/crear_peticion': {'POST': 'crear_peticion'},
         '/api/v1/login_usuario_mobile': {'POST': 'login_usuario_mobile'},
         '/api/v1/guardar_ubicacion': {'POST': 'guardar_ubicacion'},
+        '/api/v1/guardar_carrera': {'POST': 'guardar_carrera'},
+        '/api/v1/guardar_usuario': {'POST': 'guardar_usuario'},
+        '/api/v1/ubicacion_carrera': {'POST': 'ubicacion_carrera'},
+        '/api/v1/ubicacion_carrera_detalle': {'POST': 'ubicacion_carrera_detalle'},
     }
+
+    def ubicacion_carrera(self):
+        self.set_session()
+        try:
+            response = []
+            data = json.loads(self.request.body.decode('utf-8'))
+            fecha = UbicacionManager(self.db).fecha_actual()
+            respuesta = CarreraManager(self.db).list_todo()
+            for r in respuesta:
+                sessions=list()
+                a =  dict(id = r.id,conductor=r.conductor,monto=r.monto,tipo=r.tipo,tracks= ["Food"],)
+                sessions.append(a)
+                r = r.get_dict()
+                diccionary = dict(fecha= r['fecha'],sessions=sessions)
+                response.append(diccionary)
+            self.respond(response=response, success=True, message="Usuario recuperados correctamente.")
+        except Exception as e:
+            print(e)
+            self.respond(success=False, message="Ocurrio un error.")
+        self.db.close()
+
+    def ubicacion_carrera_detalle(self):
+        self.set_session()
+        try:
+            response = []
+            data = json.loads(self.request.body.decode('utf-8'))
+            respuesta = Detalle_carreraManager(self.db).listar_id(data['id'])
+            for r in respuesta:
+                r = r.get_dict()
+                response.append(r)
+            self.respond(response=response, success=True, message="Usuario recuperados correctamente.")
+        except Exception as e:
+            print(e)
+            self.respond(success=False, message="Ocurrio un error.")
+        self.db.close()
 
     def check_xsrf_cookie(self):
         return
+
+    def guardar_carrera(self):
+        self.set_session()
+        try:
+            response = []
+            data = json.loads(self.request.body.decode('utf-8'))
+            fecha = UbicacionManager(self.db).fecha_actual()
+            respuesta = CarreraManager(self.db).insert(data,fecha)
+            self.respond(response=data, success=True, message="Usuario recuperados correctamente.")
+        except Exception as e:
+            print(e)
+            self.respond(success=False, message="Ocurrio un error.")
+        self.db.close()
 
     def guardar_ubicacion(self):
         self.set_session()
@@ -59,6 +111,23 @@ class ApiUsuarioController(ApiController):
         except Exception as e:
             print(e)
             self.respond(success=False, message="Ocurrio un error.")
+        self.db.close()
+
+    def guardar_usuario(self):
+        self.set_session()
+        try:
+            data = json.loads(self.request.body.decode('utf-8'))
+            result = self.manager(self.db).listar_usuario(data['username'])
+            response = []
+            if result == None:
+                objeto = self.manager(self.db).entity(**data)
+                UsuarioManager(self.db).insertar(objeto)
+                self.respond(response=response, success=True, message="Usuario recuperados correctamente.")
+            else:
+                self.respond(response=response, success=False, message="Ocurrio un problema.")
+        except Exception as e:
+            print(e)
+            self.respond(response=0, success=False, message="Not Found")
         self.db.close()
 
     def listar_usuarios(self):

@@ -38,12 +38,20 @@ class Carrera(Serializable, Base):
 
     usuario = relationship('Usuario')
 
-Acceso = Table('detalle_carrera', Base.metadata,
-               Column('id', Integer, primary_key=True),
-               Column('fk_usuario', Integer, ForeignKey('cb_usuarios_usuario.cb_usuario_id')),
-               Column('fk_carrera', Integer, ForeignKey('carrera.id')),
-               Column('monto', Float),
-               Column('latitud',String(255), nullable=True),
-               Column('longitud',String(255), nullable=True),
-               Column('estado',Boolean,nullable=False,default=1))
+class Detalle_carrera(Serializable, Base):
+        way = {'carrera': {}}
 
+        __tablename__ = 'detalle_carrera'
+        id = Column(Integer, primary_key=True)
+        fecha = Column(DateTime, nullable=False)
+        monto = Column(Float, nullable=False, default=0)
+        origlat = Column(String(255), nullable=True)
+        origlon = Column(String(255), nullable=True)
+        deslat = Column(String(255), nullable=True)
+        deslon = Column(String(255), nullable=True)
+        fk_usuario = Column(Integer, ForeignKey("cb_usuarios_usuario.cb_usuario_id"))
+        fk_carrera = Column(Integer, ForeignKey("carrera.id"))
+        enabled = Column(Boolean, default=True)
+
+        usuario = relationship('Usuario')
+        carrera = relationship('Carrera')
