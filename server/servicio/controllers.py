@@ -24,7 +24,22 @@ class ApiUsuarioController(ApiController):
         '/api/v1/guardar_usuario': {'POST': 'guardar_usuario'},
         '/api/v1/ubicacion_carrera': {'POST': 'ubicacion_carrera'},
         '/api/v1/ubicacion_carrera_detalle': {'POST': 'ubicacion_carrera_detalle'},
+        '/api/v1/editar_carrera': {'POST': 'editar_carrera'},
     }
+
+    def editar_carrera(self):
+        self.set_session()
+        try:
+            response = []
+            data = json.loads(self.request.body.decode('utf-8'))
+            respuesta = CarreraManager(self.db).obtain(data['usuario'])
+            respuesta.enabled = 1
+            response = CarreraManager(self.db).update(respuesta)
+            self.respond(response=response.get_dict(), success=True, message="Usuario recuperados correctamente.")
+        except Exception as e:
+            print(e)
+            self.respond(success=False, message="Ocurrio un error.")
+        self.db.close()
 
     def ubicacion_carrera(self):
         self.set_session()
@@ -52,6 +67,9 @@ class ApiUsuarioController(ApiController):
             response = []
             data = json.loads(self.request.body.decode('utf-8'))
             respuesta = Detalle_carreraManager(self.db).listar_id(data['id'])
+            carrera = CarreraManager(self.db).obtain(data['id'])
+            carrera.conductor=data['usuario']
+            carrera = CarreraManager(self.db).update(carrera)
             for r in respuesta:
                 r = r.get_dict()
                 response.append(r)

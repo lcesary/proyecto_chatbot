@@ -47,6 +47,9 @@ class UbicacionManager(SuperManager):
     def insert(self, object):
         return super().insert(object)
 
+    def update(self, object):
+        return super().update(object)
+
 class Detalle_carreraManager(SuperManager):
     def __init__(self, db):
         super().__init__(Detalle_carrera, db)
@@ -63,6 +66,9 @@ class Detalle_carreraManager(SuperManager):
 class CarreraManager(SuperManager):
     def __init__(self, db):
         super().__init__(Carrera, db)
+
+    def update(self, object):
+        return super().update(object)
 
     def insert(self, objeto, fecha):
         carrera = Carrera(fecha=fecha, monto=objeto['costo'], tipo=objeto['tipo'], enabled=0)
