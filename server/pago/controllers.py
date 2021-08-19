@@ -13,5 +13,5 @@ class PagoController(CrudController):
     html_index = "ubicacion/views/ubicacion/index.html"
     html_table = "ubicacion/views/ubicacion/table.html"
     routes = {
-        '/ubicacion': {'GET': 'index', 'POST': 'table'}
+        '/pago': {'GET': 'index', 'POST': 'table'}
     }

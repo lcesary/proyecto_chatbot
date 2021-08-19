@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean,Float
 from sqlalchemy.sql.schema import ForeignKey, Table
 from sqlalchemy.orm import relationship
 
@@ -23,6 +23,8 @@ class Usuario(Serializable, Base):
     token = Column('cb_usuario_token', String(2000), nullable=True, default='Sin Token')
     foto = Column('foto',String(2000),nullable=False,default='resources/images/sinImagen.jpg')
     enabled = Column('cb_usuario_enabled', Boolean, default=True)
+    monto = Column('monto', Float, default=0)
+
 
     rol = relationship('Rol')
 
